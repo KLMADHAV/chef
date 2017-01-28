@@ -7,6 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
+force_default['form'] = 'sample'
 log 'Hello World'
 
 log "Server Name= #{node['serverx']}"
@@ -18,3 +19,6 @@ end
 log "Other contnt #{node['sample']}"
 
 log "package name = #{node['pack_name']}"
+
+prime_myfile 
+log "form = #{node['form']}"
