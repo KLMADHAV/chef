@@ -141,3 +141,47 @@ knife search users "*:*"
 knife data bag edit users rama
 
 knife data bag remove users
+
+
+-----------------------
+
+
+ROLE
+-------------------------------------
+  849  knife node run_list remove chefprod1 recipe[apache]
+  850  knife node run_list remove node2 recipe[apache]
+  851  knife node run_list add node2 role[webserver]
+  852  knife node run_list add chefprod1 role[webserver]
+  853  knife node show node2
+  854  knife node run_list remove node2 recipe[roles]
+  855  knife node run_list remove node2 role[webserver]
+  856  knife node --help
+  857  knife role --help
+  858  knife node run_list remove node2 'role[webserver]'
+  859  knife node show node1
+  860  knife node show node2
+  861  knife node run_list add node2 'role[webserver]'
+  862  knife node run_list remove node2 'role[webserver]'
+  863  knife node run_list add node2 role[webserver]
+  864  knife node run_list remove node2 recipe[roles]
+  866  knife role --help
+  867  knife node run_list add node2 'role[webserver]'
+  868  knife node run_list add chefprod1 'role[webserver]'
+  869  knife node run_list remove chefprod1 recipe[roles]
+  870  knife node show node2
+  871  knife node run_list remove node2 'role[webserver]'
+  872  knife node run_list remove chefprod1 'role[webserver]'
+  873  knife role --help
+  874  knife role delete webserer
+  875  knife role delete webserver
+  877  knife role list
+  882  knife role from file webrole.rb
+  883  knife role list
+  885  knife node run_list add node2 'role[webrole]'
+  886  knife node show node2
+  888  knife cookbook upload apache
+  889  knife node run_list add chefprod1 'role[webrole]'
+  909  knife role forl file webrole.rb
+  910  knife role from file webrole.rb
+  917  /opt/chefdk/embedded/bin/gem install knife-google
+
