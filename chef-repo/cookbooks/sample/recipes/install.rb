@@ -1,3 +1,1 @@
-package 'telnet' do
-  action :install
-end
+package 'httpd'

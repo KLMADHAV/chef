@@ -1,23 +1,8 @@
 #
-# Cookbook Name:: apache
+# Cookbook:: apache
 # Recipe:: default
 #
-# Copyright 2017, YOUR_COMPANY_NAME
-#
-# All rights reserved - Do Not Redistribute
-#
-
-package 'httpd' do
-  action :install
-end
-
-service 'httpd' do 
-  action :restart
-end
-
-
-template '/var/www/html/index.html' do
-  source 'index.html.erb'
-end
-
-log 'Cook book rfom role'
+# Copyright:: 2017, The Authors, All Rights Reserved.
+include_recipe 'apache::install'
+include_recipe 'apache::htdocs'
+include_recipe 'apache::service'
