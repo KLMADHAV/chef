@@ -1,7 +1,18 @@
 
+if "#{node['path']}"
+
 log 'message' do
-  message 'A message add to the log.'
+  message "Yes Present" 
   level :fatal
+end
+
+else
+
+log 'message' do
+  message "No Present"
+  level :fatal
+end
+
 end
 
 template '/tmp/index.html' do 
